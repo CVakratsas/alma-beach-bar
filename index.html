@@ -29,7 +29,7 @@ min-height: 100vh;
 overflow-x: hidden;
 }
 
-/* — HERO — */
+/* -- HERO -- */
 .hero {
 position: relative;
 background: linear-gradient(160deg, var(–ocean) 0%, #0f2f3d 55%, #1a1208 100%);
@@ -100,14 +100,14 @@ background: linear-gradient(90deg, transparent, var(–gold), transparent);
 margin: 28px auto 0;
 }
 
-/* — MAIN — */
+/* -- MAIN -- */
 .container {
 max-width: 780px;
 margin: 0 auto;
 padding: 0 24px 80px;
 }
 
-/* — INTRO BADGE — */
+/* -- INTRO BADGE -- */
 .intro {
 display: flex;
 gap: 12px;
@@ -131,7 +131,7 @@ color: var(–muted);
 
 .intro p strong { color: var(–text); font-weight: 600; }
 
-/* — SECTION TITLE — */
+/* -- SECTION TITLE -- */
 .section-title {
 font-family: ‘Cormorant Garamond’, serif;
 font-size: 1.65rem;
@@ -147,7 +147,7 @@ gap: 10px;
 
 .section-title .icon { font-size: 1.1rem; }
 
-/* — CONDITIONS GRID — */
+/* -- CONDITIONS GRID -- */
 .conditions-grid {
 display: grid;
 grid-template-columns: 1fr 1fr;
@@ -181,7 +181,7 @@ margin-top: 1px;
 .cond-card .ctext strong { display: block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(–muted); margin-bottom: 3px; }
 .cond-card .ctext span { font-size: 0.93rem; color: var(–text); line-height: 1.45; }
 
-/* — POSITIONS — */
+/* -- POSITIONS -- */
 .positions { display: flex; flex-direction: column; gap: 16px; }
 
 .pos-card {
@@ -277,7 +277,7 @@ color: var(–muted);
 line-height: 1.35;
 }
 
-/* — SEASON BANNER — */
+/* -- SEASON BANNER -- */
 .season-banner {
 background: linear-gradient(135deg, var(–ocean) 0%, var(–ocean-light) 100%);
 border-radius: 12px;
@@ -306,7 +306,7 @@ margin-bottom: 6px;
 
 .season-banner .s-row:last-child { margin-bottom: 0; }
 
-/* — REQUIRE — */
+/* -- REQUIRE -- */
 .req-list { display: flex; flex-direction: column; gap: 10px; }
 
 .req-item {
@@ -323,7 +323,7 @@ padding: 12px 16px;
 
 .req-icon { font-size: 1.1rem; flex-shrink: 0; }
 
-/* — CTA — */
+/* -- CTA -- */
 .cta-box {
 margin-top: 50px;
 background: linear-gradient(135deg, #0f2f3d 0%, var(–ocean) 100%);
@@ -371,7 +371,7 @@ text-decoration: none;
 box-shadow: 0 4px 18px rgba(200,149,42,0.4);
 }
 
-/* — FOOTER NOTE — */
+/* -- FOOTER NOTE -- */
 .footer-note {
 text-align: center;
 font-size: 0.78rem;
@@ -386,7 +386,10 @@ from { opacity: 0; transform: translateY(18px); }
 to   { opacity: 1; transform: translateY(0); }
 }
 
-.hero h1, .hero-sub, .hero-label { animation: fadeUp 0.7s ease both; }
+.hero h1, .hero-sub, .hero-label {
+opacity: 1; /* fallback -- visible even if animation fails */
+animation: fadeUp 0.7s ease forwards;
+}
 .hero-label { animation-delay: 0s; }
 .hero h1    { animation-delay: 0.12s; }
 .hero-sub   { animation-delay: 0.24s; }
@@ -400,7 +403,7 @@ to   { opacity: 1; transform: translateY(0); }
 <div class="hero">
   <div class="hero-label">🌊 Καλοκαίρι 2026 · Sani, Χαλκιδική</div>
   <h1><em>Alma</em> Beach Club</h1>
-  <p class="hero-sub">Θέσεις Εργασίας — Εστιατόριο &amp; Bar</p>
+  <p class="hero-sub">Θέσεις Εργασίας -- Εστιατόριο &amp; Bar</p>
   <div class="hero-divider"></div>
 </div>
 
@@ -480,7 +483,7 @@ to   { opacity: 1; transform: translateY(0); }
   <div class="pos-header">
     <div class="pos-title-wrap">
       <div class="pos-num">2</div>
-      <div class="pos-title">Βοηθός Runner — Εστιατόριο Παραλίας</div>
+      <div class="pos-title">Βοηθός Runner -- Εστιατόριο Παραλίας</div>
     </div>
   </div>
   <div class="pos-body">
@@ -502,7 +505,7 @@ to   { opacity: 1; transform: translateY(0); }
   <div class="cta-box">
     <h3>Ενδιαφέρεσαι;</h3>
     <p>Στείλε το βιογραφικό σου στο παρακάτω email.</p>
-    <a class="cta-tag" href="/cdn-cgi/l/email-protection#afcc81d9cec4ddcedbdccedcefc8c2cec6c381ccc0c2">📩 Αποστολή Βιογραφικού</a>
+    <a class="cta-tag" id="emailBtn" href="#" onclick="this.href='mailto:'+atob('Yy52YWtyYXRzYXNAZ21haWwuY29t'); return true;">📩 Αποστολή Βιογραφικού</a>
   </div>
 
   <p class="footer-note">Alma Beach Club · Sani, Χαλκιδική · Καλο
