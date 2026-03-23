@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Θέσεις Εργασίας – Alma Beach Club Palma</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sand: #f5ede0;
+    --warm-white: #fdf8f2;
+    --ocean: #1a4a5e;
+    --ocean-light: #2d6b84;
+    --gold: #c8952a;
+    --gold-light: #e8b84b;
+    --coral: #d4614a;
+    --text: #1c1a18;
+    --muted: #7a6f63;
+  }
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+background-color: var(–warm-white);
+font-family: ‘Outfit’, sans-serif;
+color: var(–text);
+min-height: 100vh;
+overflow-x: hidden;
+}
+
+/* — HERO — */
+.hero {
+position: relative;
+background: linear-gradient(160deg, var(–ocean) 0%, #0f2f3d 55%, #1a1208 100%);
+padding: 70px 40px 80px;
+text-align: center;
+overflow: hidden;
+}
+
+.hero::before {
+content: ‘’;
+position: absolute;
+inset: 0;
+background: radial-gradient(ellipse 80% 60% at 50% 110%, rgba(200,149,42,0.25) 0%, transparent 70%);
+pointer-events: none;
+}
+
+/* wave decoration */
+.hero::after {
+content: ‘’;
+position: absolute;
+bottom: -2px; left: 0; right: 0;
+height: 60px;
+background: var(–warm-white);
+clip-path: ellipse(55% 100% at 50% 100%);
+}
+
+.hero-label {
+display: inline-block;
+font-family: ‘Outfit’, sans-serif;
+font-size: 0.7rem;
+font-weight: 600;
+letter-spacing: 0.25em;
+text-transform: uppercase;
+color: var(–gold-light);
+border: 1px solid rgba(232,184,75,0.4);
+padding: 5px 16px;
+border-radius: 20px;
+margin-bottom: 28px;
+}
+
+.hero h1 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: clamp(2.8rem, 6vw, 5rem);
+font-weight: 300;
+color: #fff;
+line-height: 1.1;
+letter-spacing: -0.01em;
+}
+
+.hero h1 em {
+font-style: italic;
+color: var(–gold-light);
+}
+
+.hero-sub {
+margin-top: 18px;
+font-size: 1rem;
+color: rgba(255,255,255,0.55);
+letter-spacing: 0.15em;
+text-transform: uppercase;
+font-weight: 300;
+}
+
+.hero-divider {
+width: 48px;
+height: 1px;
+background: linear-gradient(90deg, transparent, var(–gold), transparent);
+margin: 28px auto 0;
+}
+
+/* — MAIN — */
+.container {
+max-width: 780px;
+margin: 0 auto;
+padding: 0 24px 80px;
+}
+
+/* — INTRO BADGE — */
+.intro {
+display: flex;
+gap: 12px;
+align-items: flex-start;
+background: linear-gradient(135deg, #fff 0%, #fef8ee 100%);
+border: 1px solid rgba(200,149,42,0.2);
+border-left: 3px solid var(–gold);
+border-radius: 10px;
+padding: 22px 24px;
+margin: 48px 0 36px;
+box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+}
+
+.intro-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
+
+.intro p {
+font-size: 0.95rem;
+line-height: 1.7;
+color: var(–muted);
+}
+
+.intro p strong { color: var(–text); font-weight: 600; }
+
+/* — SECTION TITLE — */
+.section-title {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.65rem;
+font-weight: 400;
+color: var(–ocean);
+margin: 44px 0 20px;
+padding-bottom: 10px;
+border-bottom: 1px solid rgba(26,74,94,0.12);
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.section-title .icon { font-size: 1.1rem; }
+
+/* — CONDITIONS GRID — */
+.conditions-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 14px;
+margin-bottom: 10px;
+}
+
+@media (max-width: 520px) { .conditions-grid { grid-template-columns: 1fr; } }
+
+.cond-card {
+background: #fff;
+border: 1px solid rgba(0,0,0,0.07);
+border-radius: 10px;
+padding: 16px 18px;
+display: flex;
+align-items: flex-start;
+gap: 12px;
+box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cond-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.07); }
+
+.cond-card .cicon {
+font-size: 1.3rem;
+flex-shrink: 0;
+margin-top: 1px;
+}
+
+.cond-card .ctext { flex: 1; }
+.cond-card .ctext strong { display: block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(–muted); margin-bottom: 3px; }
+.cond-card .ctext span { font-size: 0.93rem; color: var(–text); line-height: 1.45; }
+
+/* — POSITIONS — */
+.positions { display: flex; flex-direction: column; gap: 16px; }
+
+.pos-card {
+background: #fff;
+border-radius: 12px;
+border: 1px solid rgba(0,0,0,0.07);
+box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+overflow: hidden;
+transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pos-card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.08); }
+
+.pos-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 18px 22px 14px;
+border-bottom: 1px solid rgba(0,0,0,0.06);
+gap: 12px;
+flex-wrap: wrap;
+}
+
+.pos-title-wrap { display: flex; align-items: center; gap: 10px; }
+.pos-num {
+width: 30px; height: 30px;
+border-radius: 50%;
+background: var(–ocean);
+color: #fff;
+font-size: 0.8rem;
+font-weight: 600;
+display: flex; align-items: center; justify-content: center;
+flex-shrink: 0;
+}
+
+.pos-title {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.25rem;
+font-weight: 600;
+color: var(–ocean);
+}
+
+.pos-badge {
+font-size: 0.72rem;
+font-weight: 600;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+padding: 4px 12px;
+border-radius: 20px;
+white-space: nowrap;
+}
+
+.badge-main { background: rgba(26,74,94,0.1); color: var(–ocean); }
+.badge-support { background: rgba(200,149,42,0.12); color: #9a6e10; }
+
+.pos-body { padding: 16px 22px 18px; }
+
+.pos-row {
+display: flex;
+gap: 8px;
+align-items: flex-start;
+font-size: 0.9rem;
+color: var(–text);
+line-height: 1.5;
+margin-bottom: 8px;
+}
+
+.pos-row:last-child { margin-bottom: 0; }
+.pos-row .dot { color: var(–gold); font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+
+/* salary highlight */
+.salary-highlight {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+background: linear-gradient(135deg, #fffbf0, #fff8e7);
+border: 1px solid rgba(200,149,42,0.3);
+border-radius: 8px;
+padding: 10px 16px;
+margin-top: 6px;
+}
+
+.salary-highlight .amount {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.4rem;
+font-weight: 600;
+color: var(–gold);
+}
+
+.salary-highlight .note {
+font-size: 0.8rem;
+color: var(–muted);
+line-height: 1.35;
+}
+
+/* — SEASON BANNER — */
+.season-banner {
+background: linear-gradient(135deg, var(–ocean) 0%, var(–ocean-light) 100%);
+border-radius: 12px;
+padding: 24px 26px;
+color: #fff;
+margin: 16px 0 0;
+}
+
+.season-banner .s-title {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.2rem;
+font-weight: 400;
+margin-bottom: 12px;
+color: var(–gold-light);
+display: flex; align-items: center; gap: 8px;
+}
+
+.season-banner .s-row {
+display: flex;
+gap: 8px;
+font-size: 0.9rem;
+line-height: 1.55;
+color: rgba(255,255,255,0.85);
+margin-bottom: 6px;
+}
+
+.season-banner .s-row:last-child { margin-bottom: 0; }
+
+/* — REQUIRE — */
+.req-list { display: flex; flex-direction: column; gap: 10px; }
+
+.req-item {
+display: flex;
+align-items: center;
+gap: 12px;
+font-size: 0.92rem;
+color: var(–text);
+background: #fff;
+border: 1px solid rgba(0,0,0,0.06);
+border-radius: 8px;
+padding: 12px 16px;
+}
+
+.req-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+/* — CTA — */
+.cta-box {
+margin-top: 50px;
+background: linear-gradient(135deg, #0f2f3d 0%, var(–ocean) 100%);
+border-radius: 14px;
+padding: 34px 32px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+
+.cta-box::before {
+content: ‘’;
+position: absolute;
+inset: 0;
+background: radial-gradient(ellipse 80% 60% at 50% 110%, rgba(200,149,42,0.3) 0%, transparent 70%);
+}
+
+.cta-box h3 {
+position: relative;
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.7rem;
+font-weight: 400;
+color: #fff;
+margin-bottom: 10px;
+}
+
+.cta-box p {
+position: relative;
+font-size: 0.9rem;
+color: rgba(255,255,255,0.6);
+margin-bottom: 24px;
+}
+
+.cta-tag {
+position: relative;
+display: inline-block;
+background: var(–gold);
+color: #fff;
+font-size: 0.85rem;
+font-weight: 600;
+letter-spacing: 0.05em;
+padding: 12px 28px;
+border-radius: 30px;
+text-decoration: none;
+box-shadow: 0 4px 18px rgba(200,149,42,0.4);
+}
+
+/* — FOOTER NOTE — */
+.footer-note {
+text-align: center;
+font-size: 0.78rem;
+color: var(–muted);
+margin-top: 32px;
+letter-spacing: 0.03em;
+}
+
+/* animations */
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(18px); }
+to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1, .hero-sub, .hero-label { animation: fadeUp 0.7s ease both; }
+.hero-label { animation-delay: 0s; }
+.hero h1    { animation-delay: 0.12s; }
+.hero-sub   { animation-delay: 0.24s; }
+</style>
+
+</head>
+<body>
+
+<!-- HERO -->
+
+<div class="hero">
+  <div class="hero-label">🌊 Καλοκαίρι 2026 · Sani, Χαλκιδική</div>
+  <h1><em>Alma</em> Beach Club</h1>
+  <p class="hero-sub">Θέσεις Εργασίας — Εστιατόριο &amp; Bar</p>
+  <div class="hero-divider"></div>
+</div>
+
+<div class="container">
+
+  <!-- INTRO -->
+
+  <div class="intro">
+    <div class="intro-icon">🏖️</div>
+    <p>
+      Το <strong>Alma Beach Club</strong> είναι ένα premium beach bar υψηλών προδιαγραφών στο <strong>Sani της Χαλκιδικής</strong>, με εστιατόριο και bar δίπλα στη θάλασσα. Αναζητούμε άτομα με <strong>μεράκι, επαγγελματισμό και ομαδικό πνεύμα</strong> για την καλοκαιρινή σεζόν 2026.
+    </p>
+  </div>
+
+  <!-- CONDITIONS -->
+
+  <div class="section-title"><span class="icon">📋</span> Συνθήκες Εργασίας</div>
+
+  <div class="conditions-grid">
+    <div class="cond-card">
+      <span class="cicon">⏰</span>
+      <div class="ctext">
+        <strong>Ωράριο</strong>
+        <span>8,5 ώρες ημερησίως · υπερωρίες με πληρωμή (κατόπιν συμφωνίας)</span>
+      </div>
+    </div>
+    <div class="cond-card">
+      <span class="cicon">📅</span>
+      <div class="ctext">
+        <strong>Ρεπό</strong>
+        <span>6 ημέρες εργασία / 1 ρεπό εβδομαδιαίως</span>
+      </div>
+    </div>
+    <div class="cond-card">
+      <span class="cicon">🍽️</span>
+      <div class="ctext">
+        <strong>Φαγητό Προσωπικού</strong>
+        <span>Παρέχεται καθημερινά</span>
+      </div>
+    </div>
+    <div class="cond-card">
+      <span class="cicon">🛏️</span>
+      <div class="ctext">
+        <strong>Διαμονή</strong>
+        <span>Νεοανακαινισμένα δωμάτια προσωπικού (2–3 δωμάτια διαθέσιμα)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- POSITIONS -->
+
+  <div class="section-title"><span class="icon">👥</span> Ανοιχτές Θέσεις</div>
+  <div class="positions">
+
+```
+<!-- Σέρβις -->
+<div class="pos-card">
+  <div class="pos-header">
+    <div class="pos-title-wrap">
+      <div class="pos-num">1</div>
+      <div class="pos-title">Σερβιτόρος / Σερβιτόρα</div>
+    </div>
+  </div>
+  <div class="pos-body">
+    <div class="pos-row"><span class="dot">◆</span><span>Απαραίτητη <strong>προϋπηρεσία</strong> σε εστιατόριο ή beach bar.</span></div>
+    <div class="pos-row"><span class="dot">◆</span><span>Γνώση <strong>αγγλικής γλώσσας</strong>.</span></div>
+    <div class="pos-row"><span class="dot">◆</span><span>📅 <strong>Περίοδος:</strong> Τέλη Μαΐου – Μέσα Σεπτεμβρίου 2026</span></div>
+    <div class="salary-highlight">
+      <span class="amount">1.200 – 1.400€</span>
+      <span class="note">μηνιαίως<br>(ανάλογα εμπειρίας)</span>
+    </div>
+  </div>
+</div>
+
+<!-- Runner -->
+<div class="pos-card">
+  <div class="pos-header">
+    <div class="pos-title-wrap">
+      <div class="pos-num">2</div>
+      <div class="pos-title">Βοηθός Runner — Εστιατόριο Παραλίας</div>
+    </div>
+  </div>
+  <div class="pos-body">
+    <div class="pos-row"><span class="dot">◆</span><span>Υποστήριξη εξυπηρέτησης & παράδοση παραγγελιών.</span></div>
+    <div class="pos-row"><span class="dot">◆</span><span>Βασική γνώση <strong>αγγλικής γλώσσας</strong>.</span></div>
+    <div class="pos-row"><span class="dot">◆</span><span>📅 <strong>Περίοδος:</strong> Ιούλιος – Αύγουστος 2026</span></div>
+    <div class="salary-highlight">
+      <span class="amount">1.200 – 1.400€</span>
+      <span class="note">μηνιαίως<br>(ανάλογα εμπειρίας)</span>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+
+  <!-- CTA -->
+
+  <div class="cta-box">
+    <h3>Ενδιαφέρεσαι;</h3>
+    <p>Στείλε το βιογραφικό σου στο παρακάτω email.</p>
+    <a class="cta-tag" href="/cdn-cgi/l/email-protection#afcc81d9cec4ddcedbdccedcefc8c2cec6c381ccc0c2">📩 Αποστολή Βιογραφικού</a>
+  </div>
+
+  <p class="footer-note">Alma Beach Club · Sani, Χαλκιδική · Καλο
